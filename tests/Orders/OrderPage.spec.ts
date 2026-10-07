@@ -47,6 +47,5 @@ test.skip('Navigate to Domains', async ({ page }) => {
     await page.screenshot({
   path: path.join(SCREENSHOT_PATH, 'Domain.png'),
 });
-  await page.pause();
 });
 
