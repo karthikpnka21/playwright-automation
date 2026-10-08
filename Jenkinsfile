@@ -1,6 +1,8 @@
 pipeline {
 
-    agent any
+    agent {
+        label 'windows-playwright'
+    }
 
     tools {
         nodejs 'NodeJS-20'
