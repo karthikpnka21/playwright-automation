@@ -7,7 +7,7 @@ import { DomainPage } from '../../pages/DomainPage';
 import { SCREENSHOT_PATH } from '../../utils/TestData';
 import path from 'path';
 
-test.skip('Navigate to Orders', async ({ page }) => {
+test('Navigate to Orders', async ({ page }) => {
 
   await page.goto('/');
   
@@ -36,7 +36,7 @@ test('Navigate to Organization', async ({ page }) => {
 
 });
 
-test.skip('Navigate to Domains', async ({ page }) => {
+test('Navigate to Domains', async ({ page }) => {
 
   await page.goto('/dashboard');
 
