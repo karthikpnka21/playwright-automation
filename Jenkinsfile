@@ -29,7 +29,7 @@ pipeline {
         stage('Install Playwright Browsers') {
             steps {
                 echo 'Installing Playwright browsers...'
-                bat 'npx playwright install --with-deps chromium'
+                bat 'npx playwright install chromium'
             }
         }
 
@@ -37,7 +37,7 @@ pipeline {
             steps {
                 echo 'Running login setup and Order tests...'
 
-                bat 'npx playwright test --project=Orders'
+                bat 'npx playwright test --project=Orders --headed'
             }
         }
     }
