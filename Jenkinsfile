@@ -1,8 +1,6 @@
 pipeline {
 
-    agent {
-        label 'Jenkins'
-    }
+    agent any
 
     tools {
         nodejs 'NodeJS-20'
@@ -34,7 +32,16 @@ pipeline {
                 bat 'npx playwright install chromium'
             }
         }
-
+        stage('Check Jenkins Windows Session') {
+            steps {
+                bat '''
+                    whoami
+                    echo SESSIONNAME=%SESSIONNAME%
+                    echo USERNAME=%USERNAME%
+                    hostname
+                '''
+            }
+        }
         stage('Run Playwright Tests') {
             steps {
                 echo 'Running login setup and Order tests...'
