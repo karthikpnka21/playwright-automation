@@ -51,8 +51,9 @@ export default defineConfig({
      name: 'Orders',
      dependencies: ['setup'],
       testMatch: /Orders\/OrderPage\.spec\.ts/,
-      use: { ...devices['Desktop Chrome'],
+      use: { browserName: 'chromium',
         storageState: 'playwright/.auth/user.json',
+        channel: 'chrome',
       },
     },
     /*{
