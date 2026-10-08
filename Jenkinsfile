@@ -1,7 +1,7 @@
 pipeline {
 
     agent {
-        label 'windows-playwright'
+        label 'Jenkins'
     }
 
     tools {
