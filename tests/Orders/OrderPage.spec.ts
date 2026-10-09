@@ -1,42 +1,31 @@
-import { test, expect } from '@playwright/test';
-import { LoginPage } from '../../pages/LoginPage';
+import { test, expect } from '../../fixtures/ScreenshotfixturePath';
 import { loginData } from '../../utils/TestData';
 import { OrderPage } from '../../pages/OrderPage';
 import { OrganizationPage } from '../../pages/OrganizationPage';
 import { DomainPage } from '../../pages/DomainPage';
-import { SCREENSHOT_PATH } from '../../utils/TestData';
-import path from 'path';
 
-test('Navigate to Orders', async ({ page }) => {
+test('Navigate to Orders', async ({ page, takeScreenshot }) => {
 
   await page.goto('/');
   
   const orderPage = new OrderPage(page);
 
   await orderPage.goToOrders(loginData.organization);
-  /*await expect(page.locator('#ordersTab')).toBeVisible({
-    timeout: 60000
-  });*/
   await page.waitForTimeout(5000);
-    await page.screenshot({
-  path: path.join(SCREENSHOT_PATH, 'Order.png'),
-});
+  await takeScreenshot('Order.png');
 });
 
-test('Navigate to Organization', async ({ page }) => {
+test('Navigate to Organization', async ({ page, takeScreenshot }) => {
   await page.goto('/');
   
   const organizationPage = new OrganizationPage(page);
   
   await organizationPage.goToOrders(loginData.organization);
   await page.waitForTimeout(5000);
-    await page.screenshot({
-  path: path.join(SCREENSHOT_PATH, 'Organization.png'),
+   await takeScreenshot('Organization.png');
 });
 
-});
-
-test('Navigate to Domains', async ({ page }) => {
+test('Navigate to Domains', async ({ page, takeScreenshot }) => {
 
   await page.goto('/dashboard');
 
@@ -44,8 +33,7 @@ test('Navigate to Domains', async ({ page }) => {
 
   await domainPage.goToOrders(loginData.organization);
   await page.waitForTimeout(10000);
-    await page.screenshot({
-  path: path.join(SCREENSHOT_PATH, 'Domain.png'),
-});
+  await takeScreenshot('Domain.png');
 });
 
+  
