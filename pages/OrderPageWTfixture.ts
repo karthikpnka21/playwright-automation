@@ -21,6 +21,21 @@ export class OrderPage {
       'a[href="/manageOrders"]:text-is("Orders")'
     );
   }
+  getMicrosoftButton(): Locator {
+    return this.microsoftButton;
+  }
+  getContinueUser(): Locator {
+    return this.ContinueUser;
+  }
+  getCertificatesMenu(): Locator {
+    return this.certificatesMenu;
+  }
+  getOrdersMenu(): Locator {
+    return this.ordersMenu;
+  }
+   getPage(): Page {
+    return this.page;
+  }
   async goToOrders(): Promise<void> {
     await this.page.waitForLoadState('networkidle');
 }
