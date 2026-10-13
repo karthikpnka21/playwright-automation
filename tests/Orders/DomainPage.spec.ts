@@ -1,7 +1,8 @@
-import { test, expect } from '@playwright/test';
 import { LoginPage } from '../../pages/LoginPage';
 import { loginData } from '../../utils/TestData';
 import { DomainPage } from '../../pages/DomainPage';
+import { test, expect } from '../../fixtures/CommonFix';
+
 
 test('Navigate to Domains', async ({ page }) => {
 

@@ -1,7 +1,7 @@
 import { OrganizationPage } from '../../pages/OrganizationPage';
 import { LoginPage } from '../../pages/LoginPage';
 import { loginData } from '../../utils/TestData';
-import { test, expect } from '../../fixtures/Orderfixtures';
+import { test, expect } from '../../fixtures/CommonFix';
 
 test('Navigate to Organization', async ({ page }) => {
 
