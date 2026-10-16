@@ -23,6 +23,8 @@ export class DomainPage {
     this.domainsTab = page.locator('#domainsTab');
   }
   async goToOrders(): Promise<void> {
+    await this.certificatesMenu.click();
+    await this.ordersMenu.click();
     await this.domainsTab.click();
     await this.page.waitForLoadState('networkidle');
 }

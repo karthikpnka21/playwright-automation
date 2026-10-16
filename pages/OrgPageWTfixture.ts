@@ -23,6 +23,8 @@ export class OrganizationPage {
     this.organizationTab = page.locator('#organizationTab');
   }
   async goToOrders(): Promise<void> {
+    await this.certificatesMenu.click();
+    await this.ordersMenu.click();
     await this.organizationTab.click();
     await this.page.waitForLoadState('networkidle');
 }

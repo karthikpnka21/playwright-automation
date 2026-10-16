@@ -37,6 +37,8 @@ export class OrderPage {
     return this.page;
   }
   async goToOrders(): Promise<void> {
+    await this.certificatesMenu.click();
+      await this.ordersMenu.click();
     await this.page.waitForLoadState('networkidle');
 }
 }

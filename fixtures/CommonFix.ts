@@ -25,13 +25,9 @@ export const OrderBase = base.extend<OrderFixtures>({
       if (page.url().includes('https://qa.certinext.io/loginConfirmation')) {
         await continueUser.click();
 
-      await certificatesMenu.click();
-      await ordersMenu.click();
-
       } else if (page.url().includes('https://qa.certinext.io/dashboard')){
 
-    await certificatesMenu.click();
-    await ordersMenu.click();
+      await page.waitForLoadState('networkidle');
     }
     else if (page.url().includes('https://qa.certinext.io/verifyLogin?code=')) {
     await microsoftButton.click();
@@ -43,10 +39,6 @@ export const OrderBase = base.extend<OrderFixtures>({
       hasText: organization,
     });
     await targetRow.locator('button:has-text("Proceed")').click();
-    
-    await certificatesMenu.click();
-    await ordersMenu.click();
-    await orderPage.goToOrders();
     } 
     };
 

@@ -53,8 +53,16 @@ export default defineConfig({
       testMatch: /Orders\/OrderPage\.spec\.ts/,
       use: { browserName: 'chromium',
         storageState: 'playwright/.auth/user.json',
-      },
+      }
     },
+    {
+      name: 'APIs',
+     dependencies: ['Orders'],
+      testMatch: /APIsCred\/ACMEAPIsCreds\.spec\.ts/,
+      use: { browserName: 'chromium',
+        storageState: 'playwright/.auth/user.json',
+    }
+  },
     /*{
      name: 'Organization',
      dependencies: ['Orders'],

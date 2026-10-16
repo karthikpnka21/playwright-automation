@@ -15,7 +15,7 @@ test('Navigate to Orders', async ({ page, goToOrders, takeScreenshot }) => {
 });
 
 test('Navigate to Organization', async ({ page, goToOrders, takeScreenshot }) => {
-  await page.goto('/');
+  await page.goto('/dashboard');
   
   await goToOrders(loginData.organization);
   const organizationPage  = new OrganizationPage(page);
