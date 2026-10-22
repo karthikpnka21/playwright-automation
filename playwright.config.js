@@ -62,6 +62,22 @@ export default defineConfig({
       use: { browserName: 'chromium',
         storageState: 'playwright/.auth/user.json',
     }
+    },
+    {
+      name: 'CSRgenerator',
+      dependencies: ['setup'],
+      testMatch: /CSRGeneratorTest\.spec\.ts/,
+      use: { browserName: 'chromium',
+        storageState: 'playwright/.auth/user.json'
+    }
+  },
+    {
+      name: 'OrderDVSSL',
+      dependencies: ['CSRgenerator'],
+      testMatch: /Orders\/OrderDVSSL\.spec\.ts/,
+      use: { browserName: 'chromium',
+        storageState: 'playwright/.auth/user.json'
+    }
   },
     /*{
      name: 'Organization',
