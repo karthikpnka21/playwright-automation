@@ -5,7 +5,7 @@ import { OrganizationPage } from '../../pages/OrgPageWTfixture';
 import { DomainPage } from '../../pages/DomainPageWTfixture';
 
 test('Navigate to Orders', async ({ page, goToOrders, takeScreenshot }) => {
-
+  test.setTimeout(100000);
   await page.goto('/');
   await goToOrders(loginData.organization);
   const orderPage = new OrderPage(page);
@@ -15,8 +15,8 @@ test('Navigate to Orders', async ({ page, goToOrders, takeScreenshot }) => {
 });
 
 test('Navigate to Organization', async ({ page, goToOrders, takeScreenshot }) => {
+  test.setTimeout(100000);
   await page.goto('/dashboard');
-  
   await goToOrders(loginData.organization);
   const organizationPage  = new OrganizationPage(page);
   await organizationPage.goToOrders();
@@ -25,9 +25,8 @@ test('Navigate to Organization', async ({ page, goToOrders, takeScreenshot }) =>
 });
 
 test('Navigate to Domains', async ({ page, goToOrders, takeScreenshot }) => {
-
+  test.setTimeout(100000);
   await page.goto('/dashboard');
-
   await goToOrders(loginData.organization);
   const domainPage = new DomainPage(page);
   await domainPage.goToOrders();

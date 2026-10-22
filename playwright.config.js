@@ -65,7 +65,7 @@ export default defineConfig({
     },
     {
       name: 'CSRgenerator',
-      dependencies: ['setup'],
+      dependencies: ['Orders'],
       testMatch: /CSRGeneratorTest\.spec\.ts/,
       use: { browserName: 'chromium',
         storageState: 'playwright/.auth/user.json'
