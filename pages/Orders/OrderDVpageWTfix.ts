@@ -1,5 +1,5 @@
 import { Page, Locator, expect } from '@playwright/test';
-import { CertData } from '../utils/TestData';
+import { CertData } from '../../utils/TestData';
 
 export class OrderDVPage {
   private readonly page: Page;

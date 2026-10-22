@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 import { EVOrderPage } from '../pages/OrderEVSSLPage';
 import { LoginPage } from '../pages/LoginPage';
-import { TrackOrderPage } from '../pages/DomainVerificationPage';
+import { TrackOrderPage } from '../pages/Orders/DomainVerificationPage';
 import { loginData, OrgData, csrData, OrderData } from '../utils/TestData';
 import { SCREENSHOT_PATH } from '../utils/TestData';
 

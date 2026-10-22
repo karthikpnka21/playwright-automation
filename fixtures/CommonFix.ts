@@ -2,9 +2,9 @@ import { test as base, expect } from '@playwright/test';
 import path from 'path';
 import fs from 'fs/promises';
 import { SCREENSHOT_PATH } from '../utils/TestData';
-import { OrderPage } from '../pages/OrderPageWTfixture';
-import { OrganizationPage } from '../pages/OrgPageWTfixture';
-import { DomainPage } from '../pages/DomainPageWTfixture';
+import { OrderPage } from '../pages/Orders/OrderPageWTfixture';
+import { OrganizationPage } from '../pages/Orders/OrgPageWTfixture';
+import { DomainPage } from '../pages/Orders/DomainPageWTfixture';
 
 type OrderFixtures = {
   goToOrders: (organization: string) => Promise<void>;

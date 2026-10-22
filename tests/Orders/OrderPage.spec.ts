@@ -1,8 +1,8 @@
 import { test } from '../../fixtures/CommonFix';
 import { loginData } from '../../utils/TestData';
-import { OrderPage } from '../../pages/OrderPageWTfixture';
-import { OrganizationPage } from '../../pages/OrgPageWTfixture';
-import { DomainPage } from '../../pages/DomainPageWTfixture';
+import { OrderPage } from '../../pages/Orders/OrderPageWTfixture';
+import { OrganizationPage } from '../../pages/Orders/OrgPageWTfixture';
+import { DomainPage } from '../../pages/Orders/DomainPageWTfixture';
 
 test('Navigate to Orders', async ({ page, goToOrders, takeScreenshot }) => {
   test.setTimeout(100000);

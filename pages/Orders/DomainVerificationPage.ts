@@ -1,5 +1,5 @@
 import { Page, Locator, expect } from '@playwright/test';
-import { SCREENSHOT_PATH } from '../utils/TestData';
+import { SCREENSHOT_PATH } from '../../utils/TestData';
 
 export class TrackOrderPage {
   private readonly page: Page;

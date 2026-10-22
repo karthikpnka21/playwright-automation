@@ -1,6 +1,6 @@
 import { test, expect } from '../../fixtures/CommonFix';
 import { csrData, OrderData } from '../../utils/TestData';
-import { OrderDVPage } from '../../pages/OrderDVpageWTfix';
+import { OrderDVPage } from '../../pages/Orders/OrderDVpageWTfix';
 import fs from 'fs';
 import path from 'path';
 
