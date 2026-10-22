@@ -4,10 +4,9 @@ import { OrderDVPage } from '../../pages/OrderDVpageWTfix';
 import fs from 'fs';
 import path from 'path';
 
-const testDataPath = path.resolve(
-  __dirname,
-  '../../utils/testData.ts'
-);
+const testDataPath = path.resolve(__dirname,'../../utils/testData.ts');
+
+test.describe.serial('Order DV SSL Flow', () => {
 
 test('Place DV SSL Certificate', async ({ page, goToOrders, takeScreenshot }) => {
   test.setTimeout(100000);
@@ -34,19 +33,11 @@ test('Place DV SSL Certificate', async ({ page, goToOrders, takeScreenshot }) =>
   
   
     // Update Track Order URL in TestData.ts
-    let fileContent: string =
-      fs.readFileSync(testDataPath, 'utf8');
+    let fileContent: string = fs.readFileSync(testDataPath, 'utf8');
   
-    fileContent = fileContent.replace(
-      /TrackOrderURL:\s*'.*?'/,
-      `TrackOrderURL: '${trackUrl}'`
-    );
+    fileContent = fileContent.replace(/TrackOrderURL:\s*'.*?'/,`TrackOrderURL: '${trackUrl}'`);
   
-    fs.writeFileSync(
-      testDataPath,
-      fileContent,
-      'utf8'
-    );
+    fs.writeFileSync(testDataPath,fileContent,'utf8');
 
   await page.waitForLoadState('networkidle');
   await takeScreenshot('DVOrder.png');
@@ -57,4 +48,6 @@ test('Open Track Order', async ({ page, goToOrders, takeScreenshot }) => {
   await page.goto(OrderData.TrackOrderURL);
   await page.waitForLoadState('networkidle');
   await takeScreenshot('DVTrackOrder.png');
+});
+
 });
