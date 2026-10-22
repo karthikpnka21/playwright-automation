@@ -1,6 +1,6 @@
 import { LoginPage } from '../../pages/LoginPage';
 import { loginData } from '../../utils/TestData';
-import { DomainPage } from '../../pages/DomainPage';
+import { DomainPage } from '../../pages/Orders/DomainPage';
 import { test, expect } from '../../fixtures/CommonFix';
 
 
