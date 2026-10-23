@@ -27,12 +27,6 @@ export class OrderPage {
   getContinueUser(): Locator {
     return this.ContinueUser;
   }
-  getCertificatesMenu(): Locator {
-    return this.certificatesMenu;
-  }
-  getOrdersMenu(): Locator {
-    return this.ordersMenu;
-  }
    getPage(): Page {
     return this.page;
   }
