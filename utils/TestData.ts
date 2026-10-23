@@ -1,7 +1,7 @@
 export const loginData = {
   emailid: 'karthik.pn@emudhra.com',
   password: 'KarthiAshu@AbofRbKA21',
-  organization: 'Slidecode techn',
+  organization: 'Sugarcandy code packs',
 };
 
 export const loginCertinextData = {
@@ -21,7 +21,11 @@ export const OrgData= {
 
 export const CertData= {
   RequestorName: 'Karthik P N',
-  EmailID: 'karthik.pn@emudhra.com'
+  EmailID: 'karthik.pn@emudhra.com',
+  Group: 'Sugarcandy code packs',
+  OrgAccNumber: '5923945769',
+  OrgName: 'Sugarcandy code packs',
+  OrganizationName: 'Sugarcandy code packs(7156798)', // 'Organization Name' and 'Organization ID' from 'Certificates/Order/Organization'
 }
 
 export let csrData = {

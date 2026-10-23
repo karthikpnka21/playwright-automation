@@ -1,5 +1,5 @@
 import { Page, Locator } from '@playwright/test';
-
+import { loginData, CertData } from '../../utils/TestData';
 
 export class RESTApiPage {
   private readonly page: Page;
@@ -26,9 +26,9 @@ export class RESTApiPage {
     this.SelectAPITypeButton = page.locator('#apiType');
     this.Identifier= page.locator('#description');
     this.userDropdown = page.locator('#select2-userName-container');
-    this.userOption= page.getByRole('option', {name: 'Karthik P N (karthik.pn@emudhra.com)',exact: true});
+    this.userOption= page.getByRole('option', {name: CertData.EmailID ,exact: false});
     this.GroupDropdown = page.locator('#groupID');
-    this.GroupOption= page.getByText('VeriCode Private limited', { exact: true });
+    this.GroupOption= page.getByText(CertData.Group, { exact: true });
     this.GenerateButton=page.locator('Input[value="Generate"]');
   }
 
@@ -46,7 +46,7 @@ export class RESTApiPage {
     await this.userDropdown.click();
     await this.userOption.click();
     await this.GroupDropdown.click();
-    await this.GroupDropdown.selectOption({label: 'Slidecode technologies'});
+    await this.GroupDropdown.selectOption({label: CertData.Group});
     await this.GenerateButton.click();
 }
 else if (this.page.url().includes('https://qa.certinext.io/dashboard')){
@@ -62,7 +62,7 @@ else if (this.page.url().includes('https://qa.certinext.io/dashboard')){
     await this.userDropdown.click();
     await this.userOption.click();
    await this.GroupDropdown.click();
-    await this.GroupDropdown.selectOption({label: 'Slidecode technologies'});
+    await this.GroupDropdown.selectOption({label: CertData.Group});
     await this.GenerateButton.click();
   }
   else if (this.page.url().includes('https://qa.certinext.io/verifyLogin?code=')) {
@@ -87,7 +87,7 @@ else if (this.page.url().includes('https://qa.certinext.io/dashboard')){
     await this.userDropdown.click();
     await this.userOption.click();
     await this.GroupDropdown.click();
-    await this.GroupDropdown.selectOption({label: 'Slidecode technologies'});
+    await this.GroupDropdown.selectOption({label: CertData.Group});
     await this.GenerateButton.click();
   }
 }

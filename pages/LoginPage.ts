@@ -69,10 +69,7 @@ async login(organization: string, email: string, password: string): Promise<void
    * Select Organization and Proceed
    */
   async selectOrganization(organization: string): Promise<void> {
-    const targetRow = this.page.locator('tr', {
-      hasText: organization,
-    });
-
+    const targetRow = this.page.locator(`tr:has(span[title="${organization}"])`);
     await targetRow.locator('button:has-text("Proceed")').click();
   }
 }

@@ -57,7 +57,7 @@ export default defineConfig({
     },
     {
       name: 'APIs',
-     dependencies: ['Orders'],
+     dependencies: ['setup'],
       testMatch: /APIsCred\/ACMEAPIsCreds\.spec\.ts/,
       use: { browserName: 'chromium',
         storageState: 'playwright/.auth/user.json',

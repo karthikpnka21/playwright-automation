@@ -1,4 +1,5 @@
 import { Page, Locator } from '@playwright/test';
+import { loginData, CertData } from '../../utils/TestData';
 
 
 export class ACMEApiPage {
@@ -30,13 +31,13 @@ export class ACMEApiPage {
     this.SelectAPITypeButton = page.locator('#apiType');
     this.Identifier= page.locator('#description');
     this.userDropdown = page.locator('#select2-userName-container');
-    this.userOption= page.getByRole('option', {name: 'Karthik P N (karthik.pn@emudhra.com)',exact: true});
+    this.userOption= page.getByRole('option', {name: CertData.EmailID,exact: false});
     this.GroupDropdown = page.locator('#groupID');
-    this.GroupOption= page.getByText('VeriCode Private limited', { exact: true });
+    this.GroupOption= page.getByText(CertData.Group, { exact: true });
     this.ProductDropdown = page.locator('#masterProductID');
     this.ProductOption= page.getByText('DV SSL Certificate', { exact: true });
     this.OrgDropdown = page.locator('#masterOrgID');
-    this.OrgOption= page.getByText('VeriCode Private limited(4453595)', { exact: true });
+    this.OrgOption= page.getByText(CertData.OrganizationName, { exact: false });
     this.GenerateButton=page.locator('Input[value="Generate"]');
   }
 
@@ -54,11 +55,11 @@ export class ACMEApiPage {
     await this.userDropdown.click();
     await this.userOption.click();
     await this.GroupDropdown.click();
-    await this.GroupDropdown.selectOption({label: 'Slidecode technologies'});
+    await this.GroupDropdown.selectOption({label: CertData.Group});
     await this.ProductDropdown.click();
     await this.ProductDropdown.selectOption({label: 'DV SSL Certificate'});
     await this.OrgDropdown.click();
-    await this.OrgDropdown.selectOption({label: 'Slidecode technologies(5467915)'});
+    await this.OrgDropdown.selectOption({label: CertData.OrganizationName});
     await this.GenerateButton.click();
 }
 else if (this.page.url().includes('https://qa.certinext.io/dashboard')){
@@ -74,11 +75,11 @@ else if (this.page.url().includes('https://qa.certinext.io/dashboard')){
     await this.userDropdown.click();
     await this.userOption.click();
     await this.GroupDropdown.click();
-    await this.GroupDropdown.selectOption({label: 'Slidecode technologies'});
+    await this.GroupDropdown.selectOption({label: CertData.Group});
     await this.ProductDropdown.click();
     await this.ProductDropdown.selectOption({label: 'DV SSL Certificate'});
     await this.OrgDropdown.click();
-    await this.OrgDropdown.selectOption({label: 'Slidecode technologies(5467915)'});
+    await this.OrgDropdown.selectOption({label: CertData.OrganizationName});
     await this.GenerateButton.click();
   }
   else if (this.page.url().includes('https://qa.certinext.io/verifyLogin?code=')) {
@@ -103,11 +104,11 @@ else if (this.page.url().includes('https://qa.certinext.io/dashboard')){
     await this.userDropdown.click();
     await this.userOption.click();
     await this.GroupDropdown.click();
-    await this.GroupDropdown.selectOption({label: 'Slidecode technologies'});
+    await this.GroupDropdown.selectOption({label: CertData.Group});
     await this.ProductDropdown.click();
     await this.ProductDropdown.selectOption({label: 'DV SSL Certificate'});
     await this.OrgDropdown.click();
-    await this.OrgDropdown.selectOption({label: 'Slidecode technologies(5467915)'});
+    await this.OrgDropdown.selectOption({label: CertData.OrganizationName});
     await this.GenerateButton.click();
   }
 }
