@@ -79,6 +79,14 @@ export default defineConfig({
         storageState: 'playwright/.auth/user.json'
     }
   },
+   {
+      name: 'CreateBot',
+      dependencies: ['setup'],
+      testMatch: /CERTBot\/CreateBot\.spec\.ts/,
+      use: { browserName: 'chromium',
+        storageState: 'playwright/.auth/user.json'
+    }
+  },
     /*{
      name: 'Organization',
      dependencies: ['Orders'],

@@ -83,7 +83,7 @@ else if (this.page.url().includes('https://qa.certinext.io/dashboard')){
     await this.SelectAPITypeButton.selectOption({label: 'REST'});
     const date = new Date();
     const DDMMM = `${String(date.getDate()).padStart(2, '0')}${date.toLocaleString('en-US', { month: 'short' })}${String(date.getMinutes()).padStart(2, '0')}`;
-    await this.Identifier.fill("test API"+ DDMMM )
+    await this.Identifier.fill("test API"+DDMMM )
     await this.userDropdown.click();
     await this.userOption.click();
     await this.GroupDropdown.click();
