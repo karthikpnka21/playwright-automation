@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
 
 import { EVOrderPage } from '../pages/OrderEVSSLPage';
-import { TrackOrderPage } from '../pages/Orders/DomainVerificationPage';
+import { TrackOrderPage } from '../pages/DomainVerificationPage';
 import { loginData, csrData, OrderData } from '../utils/TestData';
 
 test('Domain Verification', async ({ page }) => {
