@@ -13,7 +13,7 @@ export class RESTApiPage {
   private readonly userDropdown: Locator;
   private readonly userOption: Locator;
   private readonly GroupDropdown: Locator;
-  private readonly GroupOption: Locator;
+  //private readonly GroupOption: Locator;
   private readonly GenerateButton: Locator;
 
   constructor(page: Page) {
@@ -28,7 +28,7 @@ export class RESTApiPage {
     this.userDropdown = page.locator('#select2-userName-container');
     this.userOption= page.getByRole('option', {name: CertData.EmailID ,exact: false});
     this.GroupDropdown = page.locator('#groupID');
-    this.GroupOption= page.getByText(CertData.Group, { exact: true });
+    //this.GroupOption= page.getByText(CertData.Group, { exact: true });
     this.GenerateButton=page.locator('Input[value="Generate"]');
   }
 
