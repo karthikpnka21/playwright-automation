@@ -10,15 +10,16 @@ export class ACMEApiPage {
   private readonly APIsMenu: Locator;
   private readonly createAPICredentialsButton: Locator;
   private readonly SelectAPITypeButton: Locator;
+  private readonly SelectConnector: Locator;
   private readonly Identifier: Locator;
   private readonly userDropdown: Locator;
   private readonly userOption: Locator;
   private readonly GroupDropdown: Locator;
-  private readonly GroupOption: Locator;
+  //private readonly GroupOption: Locator;
   private readonly ProductDropdown: Locator;
-  private readonly ProductOption: Locator;
+  //private readonly ProductOption: Locator;
   private readonly OrgDropdown: Locator;
-  private readonly OrgOption: Locator;
+//private readonly OrgOption: Locator;
   private readonly GenerateButton: Locator;
 
   constructor(page: Page) {
@@ -29,15 +30,16 @@ export class ACMEApiPage {
     this.APIsMenu = page.getByText('APIs', { exact: true });
     this.createAPICredentialsButton = page.getByRole('link', {name: /Create API Credentials/});
     this.SelectAPITypeButton = page.locator('#apiType');
+    this.SelectConnector = page.locator('#caConnectorSelect');
     this.Identifier= page.locator('#description');
     this.userDropdown = page.locator('#select2-userName-container');
     this.userOption= page.getByRole('option', {name: CertData.EmailID,exact: false});
     this.GroupDropdown = page.locator('#groupID');
-    this.GroupOption= page.getByText(CertData.Group, { exact: true });
+    //this.GroupOption= page.getByText(CertData.Group, { exact: true });
     this.ProductDropdown = page.locator('#masterProductID');
-    this.ProductOption= page.getByText('DV SSL Certificate', { exact: true });
+    //this.ProductOption= page.getByText('sugar Product', { exact: true });
     this.OrgDropdown = page.locator('#masterOrgID');
-    this.OrgOption= page.getByText(CertData.OrganizationName, { exact: false });
+  //this.OrgOption= page.getByText(CertData.OrganizationName, { exact: false });
     this.GenerateButton=page.locator('Input[value="Generate"]');
   }
 
@@ -49,17 +51,19 @@ export class ACMEApiPage {
     await this.createAPICredentialsButton.click();
     await this.SelectAPITypeButton.click();
     await this.SelectAPITypeButton.selectOption({label: 'ACME'});
+    await this.SelectConnector.click();
+    await this.SelectConnector.selectOption({label: 'emCA'});
     const date = new Date();
-    const DDMMM = `${String(date.getDate()).padStart(2, '0')}${date.toLocaleString('en-US', { month: 'short' })}${String(date.getMinutes()).padStart(2, '0')}`;
-    await this.Identifier.fill("test API"+ DDMMM )
+    const DDMMMSS = `${String(date.getDate()).padStart(2, '0')}${date.toLocaleString('en-US', { month: 'short' })}${String(date.getMinutes()).padStart(2, '0')}${String(date.getSeconds()).padStart(2, '0')}`;
+    await this.Identifier.fill("test API"+ DDMMMSS );
     await this.userDropdown.click();
     await this.userOption.click();
     await this.GroupDropdown.click();
     await this.GroupDropdown.selectOption({label: CertData.Group});
     await this.ProductDropdown.click();
-    await this.ProductDropdown.selectOption({label: 'DV SSL Certificate'});
-    await this.OrgDropdown.click();
-    await this.OrgDropdown.selectOption({label: CertData.OrganizationName});
+    await this.ProductDropdown.selectOption({label: 'sugar Product'});
+  //await this.OrgDropdown.click();
+  //await this.OrgDropdown.selectOption({label: CertData.OrganizationName});
     await this.GenerateButton.click();
 }
 else if (this.page.url().includes('https://qa.certinext.io/dashboard')){
@@ -69,17 +73,19 @@ else if (this.page.url().includes('https://qa.certinext.io/dashboard')){
     await this.createAPICredentialsButton.click();
     await this.SelectAPITypeButton.click();
     await this.SelectAPITypeButton.selectOption({label: 'ACME'});
+    await this.SelectConnector.click();
+    await this.SelectConnector.selectOption({label: 'emCA'});
     const date = new Date();
-    const DDMMM = `${String(date.getDate()).padStart(2, '0')}${date.toLocaleString('en-US', { month: 'short' })}${String(date.getMinutes()).padStart(2, '0')}`;
-    await this.Identifier.fill("test API"+ DDMMM )
+    const DDMMMSS = `${String(date.getDate()).padStart(2, '0')}${date.toLocaleString('en-US', { month: 'short' })}${String(date.getMinutes()).padStart(2, '0')}${String(date.getSeconds()).padStart(2, '0')}`;
+    await this.Identifier.fill("test API"+ DDMMMSS );
     await this.userDropdown.click();
     await this.userOption.click();
     await this.GroupDropdown.click();
     await this.GroupDropdown.selectOption({label: CertData.Group});
     await this.ProductDropdown.click();
-    await this.ProductDropdown.selectOption({label: 'DV SSL Certificate'});
-    await this.OrgDropdown.click();
-    await this.OrgDropdown.selectOption({label: CertData.OrganizationName});
+    await this.ProductDropdown.selectOption({label: 'sugar Product'});
+  //await this.OrgDropdown.click();
+  //await this.OrgDropdown.selectOption({label: CertData.OrganizationName});
     await this.GenerateButton.click();
   }
   else if (this.page.url().includes('https://qa.certinext.io/verifyLogin?code=')) {
@@ -98,17 +104,19 @@ else if (this.page.url().includes('https://qa.certinext.io/dashboard')){
     await this.createAPICredentialsButton.click();
     await this.SelectAPITypeButton.click();
     await this.SelectAPITypeButton.selectOption({label: 'ACME'});
+    await this.SelectConnector.click();
+    await this.SelectConnector.selectOption({label: 'emCA'});
     const date = new Date();
-    const DDMMM = `${String(date.getDate()).padStart(2, '0')}${date.toLocaleString('en-US', { month: 'short' })}${String(date.getMinutes()).padStart(2, '0')}`;
-    await this.Identifier.fill("test API"+ DDMMM )
+    const DDMMMSS = `${String(date.getDate()).padStart(2, '0')}${date.toLocaleString('en-US', { month: 'short' })}${String(date.getMinutes()).padStart(2, '0')}${String(date.getSeconds()).padStart(2, '0')}`;
+    await this.Identifier.fill("test API"+ DDMMMSS );
     await this.userDropdown.click();
     await this.userOption.click();
     await this.GroupDropdown.click();
     await this.GroupDropdown.selectOption({label: CertData.Group});
     await this.ProductDropdown.click();
-    await this.ProductDropdown.selectOption({label: 'DV SSL Certificate'});
-    await this.OrgDropdown.click();
-    await this.OrgDropdown.selectOption({label: CertData.OrganizationName});
+    await this.ProductDropdown.selectOption({label: 'sugar Product'});
+  //await this.OrgDropdown.click();
+  //await this.OrgDropdown.selectOption({label: CertData.OrganizationName});
     await this.GenerateButton.click();
   }
 }
