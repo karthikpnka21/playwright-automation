@@ -19,7 +19,7 @@ export class RunBotAllTargetServer {
     this.RunButton = page.locator('input[onclick="runScan()"]');
   }
 
-  async RunScanAllTarget(): Promise<void> {
+  async runScanAllTarget(): Promise<void> {
     await this.DiscoveryMenu.click();
     await this.TotalBot.click();
     await this.SelectDropdown.click();

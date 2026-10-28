@@ -28,7 +28,7 @@ export class ConfigureBotCertstore {
     this.RunButton = page.locator('input[onclick="runScan()"]');
   }
 
-  async ConfigureBot(): Promise<void> {
+  async configureBot(): Promise<void> {
     await this.DiscoveryMenu.click();
     await this.TotalBot.click();
     await this.SelectDropdown.click();
@@ -44,7 +44,7 @@ export class ConfigureBotCertstore {
     await this.SaveButton.click();
     }
   }
-  async RunBotCert(): Promise<void> {
+  async runScanCert(): Promise<void> {
     await this.SelectDropdown.click();
     await this.RunMenu.click();
     await this.CertStoreRunScanBtn.click();

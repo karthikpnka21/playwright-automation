@@ -5,10 +5,10 @@ test('Configuring Bot to Discover Certificates from Certificate Store', async ({
   test.setTimeout(150000);
   await page.goto('/dashboard');
   const configurebotcertstore = new ConfigureBotCertstore(page);
-  await configurebotcertstore.ConfigureBot();
+  await configurebotcertstore.configureBot();
   await page.waitForURL('**/manageBot');
   await page.waitForTimeout(6000);
-  await configurebotcertstore.RunScanCert();
+  await configurebotcertstore.runScanCert();
   await takeScreenshot('RunBotCertStore.png');
   await page.waitForTimeout(30000);
   await takeScreenshot('RunBotCertStoreStatus.png');
