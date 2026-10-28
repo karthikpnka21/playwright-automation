@@ -57,7 +57,7 @@ export default defineConfig({
     },
     {
       name: 'APIs',
-     dependencies: ['setup'],
+      //dependencies: ['setup'],
       testMatch: /APIsCred\/ACMEAPIsCreds\.spec\.ts/,
       use: { browserName: 'chromium',
         storageState: 'playwright/.auth/user.json',
@@ -89,7 +89,7 @@ export default defineConfig({
   },
   {
       name: 'DiscoverCertStore',
-      dependencies: ['setup'],
+      //dependencies: ['setup'],
       testMatch: /CERTBot\/BotConfig\.spec\.ts/,
       use: { browserName: 'chromium',
         storageState: 'playwright/.auth/user.json'

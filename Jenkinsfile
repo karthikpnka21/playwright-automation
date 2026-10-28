@@ -34,7 +34,7 @@ pipeline {
         }
         stage('Run Playwright Tests') {
             steps {
-                echo 'Running login setup and Order tests...'
+                echo 'Running login setup, Order, Create Apis, Discovery Certificates and Run Bot Scan tests...'
 
                 bat 'npx playwright test --project=Orders'
                 bat 'npx playwright test --project=apis'
