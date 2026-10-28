@@ -38,7 +38,7 @@ pipeline {
 
                 bat 'npx playwright test --project=Orders'
                 bat 'npx playwright test --project=apis'
-                bat 'playwright test --project=DiscoverCertStore'
+                bat 'npx playwright test --project=DiscoverCertStore'
                 bat 'npx playwright test --project=RunScanAll'
             }
         }
