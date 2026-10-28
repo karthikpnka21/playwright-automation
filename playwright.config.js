@@ -96,9 +96,9 @@ export default defineConfig({
     }
   },
   {
-      name: 'RunBotAll',
+      name: 'RunScanAll',
       //dependencies: ['setup'],
-      testMatch: /CERTBot\/BotRunAll\.spec\.ts/,
+      testMatch: /CERTBot\/BotRunScanAll\.spec\.ts/,
       use: { browserName: 'chromium',
         storageState: 'playwright/.auth/user.json'
     }

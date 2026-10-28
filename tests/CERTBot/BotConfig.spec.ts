@@ -8,7 +8,7 @@ test('Configuring Bot to Discover Certificates from Certificate Store', async ({
   await configurebotcertstore.ConfigureBot();
   await page.waitForURL('**/manageBot');
   await page.waitForTimeout(6000);
-  await configurebotcertstore.RunBotCert();
+  await configurebotcertstore.RunScanCert();
   await takeScreenshot('RunBotCertStore.png');
   await page.waitForTimeout(30000);
   await takeScreenshot('RunBotCertStoreStatus.png');
