@@ -36,8 +36,8 @@ pipeline {
             steps {
                 echo 'Running login setup and Order tests...'
 
-                bat 'npx playwright test --project=Orders --headed'
-                bat 'npx playwright test --project=apis --headed'
+                bat 'npx playwright test --project=Orders --ui'
+                bat 'npx playwright test --project=apis --ui'
             }
         }
     }

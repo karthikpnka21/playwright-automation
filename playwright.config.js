@@ -87,6 +87,23 @@ export default defineConfig({
         storageState: 'playwright/.auth/user.json'
     }
   },
+  {
+      name: 'DiscoverCertStore',
+      dependencies: ['setup'],
+      testMatch: /CERTBot\/BotConfig\.spec\.ts/,
+      use: { browserName: 'chromium',
+        storageState: 'playwright/.auth/user.json'
+    }
+  },
+  {
+      name: 'RunBotAll',
+      //dependencies: ['setup'],
+      testMatch: /CERTBot\/BotRunAll\.spec\.ts/,
+      use: { browserName: 'chromium',
+        storageState: 'playwright/.auth/user.json'
+    }
+  },
+  
     /*{
      name: 'Organization',
      dependencies: ['Orders'],
