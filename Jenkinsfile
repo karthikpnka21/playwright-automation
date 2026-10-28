@@ -36,8 +36,10 @@ pipeline {
             steps {
                 echo 'Running login setup and Order tests...'
 
-                bat 'npx playwright test --project=Orders --ui'
-                bat 'npx playwright test --project=apis --ui'
+                bat 'npx playwright test --project=Orders'
+                bat 'npx playwright test --project=apis'
+                bat 'playwright test --project=DiscoverCertStore'
+                bat 'npx playwright test --project=RunScanAll'
             }
         }
     }
