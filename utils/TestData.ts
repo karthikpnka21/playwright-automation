@@ -28,6 +28,10 @@ export const CertData= {
   OrganizationName: 'Sugarcandy code packs(7156798)', // 'Organization Name' and 'Organization ID' from 'Certificates/Order/Organization'
 }
 
+export const BotData= {
+    FilePath: 'D:\\File System\\certbot_discovery_testdata',
+}
+
 export let csrData = {
   domain: 'b9e4d04580216b2241a3809d6fec1206.test.dcv-inspector.com',
   csr: `-----BEGIN CERTIFICATE REQUEST-----
